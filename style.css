@@ -1,0 +1,137 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body
+{
+    max-width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-image: linear-gradient(to top, #514855 0%, blue 100%);
+}
+
+.calculatrice
+{
+    background-color: #222222;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 5px black;
+}
+
+
+.active
+{
+    margin: 5px 0 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.active input
+{
+    width: 35px;
+    height: 15px;
+    cursor: pointer;
+    appearance: none;
+    border-radius: 30px;
+    background: #4b4b4b;
+    position: relative;
+    outline: none;
+
+}
+.active input::before
+{
+    content: "";
+    position: absolute;
+    background: #8c8c8c;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+.active input:checked::before
+{
+    left: 20px;
+    background: #fc0101;
+}
+.hide
+{
+    color:#f7f7f7;
+}
+.title
+{
+    text-transform: uppercase;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    color:whitesmoke;
+    text-align: right;
+    margin: 5px;
+    font-weight: bold;
+}
+.ecran 
+{
+    width: 218px;
+    height: 100px;
+    background-color: #000;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 5px;
+    font-size: 25px;
+    color: white;
+}
+
+.touches
+{
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+    grid-template-rows: repeat(5,50px);
+    grid-gap: 7px;
+}
+
+button[data-touch="13"]
+{
+    grid-column: span 2 ; 
+    font-weight: bold;
+    color: white;
+    background-color: blue;
+    font-size: 35px;   
+}
+.buton-del
+{
+    width: 50px;
+    height: 30px;
+}
+
+button 
+{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    font-size: 18px;
+    box-shadow: 0 3px #ccc;
+}
+
+button:active
+{
+    box-shadow: 0 1px #ccc;
+    transform: translateY(4px);
+}
+
+button[data-touch="8"]
+{
+    background-color: orangered;
+    color: white;
+    font-weight: bold;
+}
